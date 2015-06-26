@@ -1,0 +1,12 @@
+{
+    // Required
+    "manifest_version": 2,
+    "name": "New Tab for Humans of New York",
+    "version": "0.0.1",
+
+    "description": "A plain text description",
+
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    }
+}
