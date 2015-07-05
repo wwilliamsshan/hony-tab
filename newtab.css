@@ -1,5 +1,5 @@
 .body{
-    text-align: center;
+    text-align: center; /*inherited*/
     height: 100vh;
     width: 100vw;
     margin: 0px;
@@ -8,8 +8,8 @@
     text-align: center;
 }
 .text{
-    text-align: center;
-    border: 1px solid black;
+    text-align: center; /*inherited*/
+    border: 1px solid black; 
     display: block;
     width: 25vw;
     position: absolute;
@@ -17,6 +17,10 @@
     height: 100vh;
     padding: 15px;
     box-sizing: border-box;
+    overflow: auto;
+    min-width: 319px;
+    background-color: white;
+    z-index: 1;
 }
 .text h1{
     margin: 0px;
@@ -24,19 +28,40 @@
 .text blockquote{
     margin: 10px;
 }
-.cta{
-    position: absolute;
-    width: 100%;
-    height: 15%;
-    margin-bottom: 0px;
-    bottom: 0px;
-    left: 0px;
+.body .picture{
+    @media only screen and (min-width: 1000px) {
+        position: absolute;
+        width: calc(100% - 319px);
+        height: 100vh;
+        left: 0px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+    @media only screen and (max-width: 1000px) {
+    .body .picture {
+        display: static;
+        z-index: -1;
+    }
 }
-.body img{
-    position: absolute;
-    width: 75vw;
-    height: 100vh;
-    left: 0px;
-    border: 1px solid black;
-    box-sizing: border-box;
 }
+.text h2{
+    font-size: 22px; /*inherited*/
+}
+.settings{
+    text-align: right;
+    display: block;
+}
+.settings h6{
+    margin: 0px;
+}
+.text blockquote{
+    height: 350px;
+    overflow: auto;
+}
+.cta {
+    position: static; /*absolute = relative to nearest parent, fixed = relative to the viewport, static = just where it is*/
+    margin-top: 40px;
+    display: block;
+}
+/* make it so that when reducing the width of the browser, the image will shrink until a certain point and then the text will slide over it. Search up media queries */
+
